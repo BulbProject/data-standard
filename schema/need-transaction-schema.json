@@ -7,7 +7,7 @@
     }
   },
   "definitions": {
-    "requestedNeed": {
+    "RequestedNeed": {
       "title": "Requested Need",
       "description": "Set of requirementResponses by CA against requirements of the category",
       "type": "object",
