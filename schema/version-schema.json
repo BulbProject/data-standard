@@ -35,7 +35,7 @@
       "properties": {
         "id": {
           "title":"Category ID",
-          "description":"ID for this category sepcified as a code of a relevant CPV class common for all the items under this category",
+          "description":"ID for this category specified as a code of a relevant CPV class common for all the items under this category",
           "type":"string"
         },
         "title": {
@@ -49,8 +49,8 @@
           "type":"string"
         },
         "classification": {
-          "title":"",
-          "description":"",
+          "title":"Classification",
+          "description":"Common classification for this category taken from CPV. Structure according to ",
           "type":"object",
           "$ref":"#/definitions/Classification"
         },
@@ -144,7 +144,7 @@
           ]
         },
         "minValue": {
-          "title": "Inducative minimum requirement value",
+          "title": "Indicative minimum requirement value",
           "description": "Indicative minimum value of related 'requirement' received through 'requirementResponse'",
           "type": [
             "integer",
@@ -310,9 +310,32 @@
         }
       }
     },
+    "OptionDetails":{
+      "title": "Option Details",
+      "description": "Where options are applied 'Option Details' is used to capture this information",
+      "type": "object",
+      "properties": {
+        "optionGroups": {
+          "title": "Option groups",
+          "description": "A list of option groups for this element",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OptionGroup"
+          }
+        },
+        "optionsToCombine": {
+          "title": "Options to combine",
+          "description": "Where buyer reserves the right to combine options a 'Option to combine' is used to capture this information",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OptionToCombine"
+          }
+        }
+      }
+    },
     "OptionGroup": {
       "title": "Option Group",
-      "description": "An option group is a set of optionss that may be applied by Procuring Entity for specific property",
+      "description": "An option group is a set of options that may be applied by Procuring Entity for specific property",
       "type": "object",
       "properties": {
         "id": {
@@ -349,7 +372,7 @@
     },
     "OptionToCombine": {
       "title": "Option to combine",
-      "description": "Whethe buyer reserves the right to combine options a 'Option to combine' is used to capture this information",
+      "description": "Where buyer reserves the right to combine options a 'Option to combine' is used to capture this information",
       "type": "object",
       "properties": {
         "id": {
@@ -481,7 +504,7 @@
           ]
         },
         "expectedValue": {
-          "title":"Exected value",
+          "title":"Expected value",
           "description": "Used to state the requirement when the response must be particular value",
           "type": [
             "string",
@@ -510,31 +533,13 @@
         },
         "period": {
           "title":"Period",
-          "description": "Used to specify a particular [Period] the requirement applies to, for example the bidder's turnover in a given year",
+          "description": "Used to specify a particular period the requirement applies to, for example the bidder's turnover in a given year",
           "$ref": "#/definitions/Period"
         },
         "optionDetails":{
           "title": "Option Details",
-          "description": "Where options are applied 'Option Details'is used to capture this information",
-          "type": "object",
-          "properties": {
-            "optionGroups": {
-              "title": "Option groups",
-              "description": "A list of option groups for this element",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/OptionGroup"
-              }
-            },
-            "optionsToCombine": {
-              "title": "Options to combine",
-              "description": "Whethe buyer reserves the right to combine options a 'Option to combine' is used to capture this information",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/OptionToCombine"
-              }
-            }
-          }
+          "description": "Where options are applied 'Option Details' is used to capture this information",
+          "$ref": "#/definitions/OptionDetails"
         }
       }
     },
@@ -559,7 +564,7 @@
         },
         "requirements": {
           "title": "Requirements",
-          "description": "A list of any requirement which must all be satisified for the requirement group to be met.",
+          "description": "A list of any requirement which must all be satisfied for the requirement group to be met.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/Requirement"
