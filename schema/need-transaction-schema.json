@@ -1,0 +1,104 @@
+{
+  "properties": {
+    "requestedNeed": {
+      "title": "Requested need",
+      "description": "General transaction for request a specific need by CA",
+      "$ref": "#/definitions/RequestedNeed"
+    }
+  },
+  "definitions": {
+    "requestedNeed": {
+      "title": "Requested Need",
+      "description": "Set of requirementResponses by CA against requirements of the category",
+      "type": "object",
+      "properties": {
+        "requirementResponses": {
+          "title": "Requirement Responses",
+          "description": "Set of requirementResponses by CA against requirements of the category",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RequirementResponse"
+          }
+        }
+      }
+    },
+    "RequirementResponse": {
+      "title": "Requirement Response",
+      "type": "object",
+      "description": "An assertion that responds to a single requirement. A requirement response provides the value for the requirement and may provide the period to which it applies.",
+      "properties": {
+        "id": {
+          "description": "The identifier for this requirement response",
+          "type": "string",
+          "mergeStrategy": "overwrite"
+        },
+        "title": {
+          "description": "Requirement response title",
+          "type": [
+            "string",
+            "null"
+          ],
+          "mergeStrategy": "ocdsVersion"
+        },
+        "description": {
+          "description": "Requirement response description",
+          "type": [
+            "string",
+            "null"
+          ],
+          "mergeStrategy": "ocdsVersion"
+        },
+        "value": {
+          "description": "Requirement response value. The value must be of the type defined in the requirement.dataType field",
+          "type": [
+            "string",
+            "integer",
+            "number",
+            "null"
+          ],
+          "mergeStrategy": "ocdsVersion"
+        },
+        "period": {
+          "description": "The [Period] which the requirement response is applicable to",
+          "$ref": "#/definitions/Period"
+        },
+        "requirement": {
+          "title": "Related requirement",
+          "description": "The [RequirementReference] of the requirement which the response is applicable to",
+          "$ref": "#/definitions/RequirementReference"
+        },
+        "relatedTenderer": {
+          "title": "Related tenderer",
+          "description": "Where this requirement response relates to a tenderer and is provided by the buyer or procuring entity this field should be used as [OrganizationReference] the entry in the parties section for the tenderer the response relates to.",
+          "$ref": "#/definitions/OrganizationReference"
+        },
+        "relatedItem": {
+          "title": "Related Item",
+          "description": "Where this requirement response relates to an item and is provided by the buyer or procuring entity this field should be used to reference the id in the items' section for the item the response relates to."
+        }
+      }
+    },
+    "RequirementReference": {
+      "type": "object",
+      "title": "Requirement reference",
+      "description": "Used to cross reference a requirement",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "title": "Requirement ID",
+          "description": "The id of the requirement which the response is applicable to",
+          "type": "string",
+          "mergeStrategy": "ocdsVersion"
+        },
+        "title": {
+          "title": "Requirement title",
+          "description": "The title of the requirement which the response is applicable to",
+          "type": "string",
+          "mergeStrategy": "ocdsVersion"
+        }
+      }
+    }
+  }
+}
