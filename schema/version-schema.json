@@ -1,0 +1,36 @@
+{
+  "id": "",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Schema for a Category Version",
+  "description": "Each version provides data about an actual version of the category at a particular point in time. Version can be used to notify users about any changes or updates. One category may have many versions.",
+  "type": "object",
+  "required": [
+    "id",
+    "date",
+    "category"
+  ],
+  "properties": {
+    "id": {
+      "title": "Version ID",
+      "description": "An identifier for this particular version of information",
+      "type": "string"
+    },
+    "date": {
+      "title": "Release Date",
+      "description": "The date this version was released, or published.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "category": {
+      "title": "",
+      "description": "",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Category"
+      }
+    }
+  },
+  "definitions": {
+    "Category":{}
+  }
+}
