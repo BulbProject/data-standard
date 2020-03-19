@@ -113,7 +113,7 @@
         "observations": {
           "type": "array",
           "title": "Observations",
-          "description": "An array of [Observation]: target or actual values for this metric.",
+          "description": "An array of Observation: target or actual values for this metric.",
           "items": {
             "$ref": "#/definitions/Observation"
           },
