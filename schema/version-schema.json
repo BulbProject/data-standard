@@ -310,6 +310,98 @@
         }
       }
     },
+    "OptionGroup": {
+      "title": "Option Group",
+      "description": "An option group is a set of optionss that may be applied by Procuring Entity for specific property",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "Identifier",
+          "description": "An identifier for this group",
+          "type": [
+            "string",
+            "integer"
+          ]
+        },
+        "description": {
+          "title": "Description",
+          "description": "Free-text description for this group",
+          "type": ""
+        },
+        "relatesTo": {
+          "title": "Related scheme element",
+          "description": "The scheme element that the group applies",
+          "type": "string",
+          "openCodelist": "true",
+          "enum": [
+            "value"
+          ]
+        },
+        "options": {
+          "title": "Options",
+          "description": "Options available for this 'optionGroup'",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Option"
+          }
+        }
+      }
+    },
+    "OptionToCombine": {
+      "title": "Option to combine",
+      "description": "Whethe buyer reserves the right to combine options a 'Option to combine' is used to capture this information",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "Identifier",
+          "description": "An identifier for this OptionToCombine",
+          "type": [
+            "string",
+            "integer"
+          ]
+        },
+        "relatedOptions": {
+          "title": "Related options",
+          "description": "A number of options related to this OptionToCombine",
+          "type": "array",
+          "items": {
+            "type": [
+              "string",
+              "integer"
+            ]
+          }
+        }
+      }
+    },
+    "Option": {
+      "title": "Option",
+      "description": "A substance of any options",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "Identifier",
+          "description": "",
+          "type": [
+            "string",
+            "integer"
+          ]
+        },
+        "description": {
+          "title": "Description",
+          "description": "Free-text description for this option",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "description": "Value provided by this option",
+          "type": [
+            "string",
+            "integer",
+            "number"
+          ]
+        }
+      }
+    },
     "Period": {
       "title": "Period",
       "type": "object",
@@ -441,98 +533,6 @@
               "items": {
                 "$ref": "#/definitions/OptionToCombine"
               }
-            }
-          }
-        },
-        "OptionGroup": {
-          "title": "Option Group",
-          "description": "An option group is a set of optionss that may be applied by Procuring Entity for specific property",
-          "type": "object",
-          "properties": {
-            "id": {
-              "title": "Identifier",
-              "description": "An identifier for this group",
-              "type": [
-                "string",
-                "integer"
-              ]
-            },
-            "description": {
-              "title": "Description",
-              "description": "Free-text description for this group",
-              "type": ""
-            },
-            "relatesTo": {
-              "title": "Related scheme element",
-              "description": "The scheme element that the group applies",
-              "type": "string",
-              "openCodelist": "true",
-              "enum": [
-                "value"
-              ]
-            },
-            "options": {
-              "title": "Options",
-              "description": "Options available for this 'optionGroup'",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Option"
-              }
-            }
-          }
-        },
-        "OptionToCombine": {
-          "title": "Option to combine",
-          "description": "Whethe buyer reserves the right to combine options a 'Option to combine' is used to capture this information",
-          "type": "object",
-          "properties": {
-            "id": {
-              "title": "Identifier",
-              "description": "An identifier for this OptionToCombine",
-              "type": [
-                "string",
-                "integer"
-              ]
-            },
-            "relatedOptions": {
-              "title": "Related options",
-              "description": "A number of options related to this OptionToCombine",
-              "type": "array",
-              "items": {
-                "type": [
-                  "string",
-                  "integer"
-                ]
-              }
-            }
-          }
-        },
-        "Option": {
-          "title": "Option",
-          "description": "A substance of any options",
-          "type": "object",
-          "properties": {
-            "id": {
-              "title": "Identifier",
-              "description": "",
-              "type": [
-                "string",
-                "integer"
-              ]
-            },
-            "description": {
-              "title": "Description",
-              "description": "Free-text description for this option",
-              "type": "string"
-            },
-            "value": {
-              "title": "Value",
-              "description": "Value provided by this option",
-              "type": [
-                "string",
-                "integer",
-                "number"
-              ]
             }
           }
         }
