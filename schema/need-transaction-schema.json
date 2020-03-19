@@ -12,6 +12,11 @@
       "description": "Set of requirementResponses by CA against requirements of the category",
       "type": "object",
       "properties": {
+        "id":{
+          "title": "ID",
+          "description": "A unique identifier for this need captured",
+          "type": "string"
+        },
         "requirementResponses": {
           "title": "Requirement Responses",
           "description": "Set of requirementResponses by CA against requirements of the category",
