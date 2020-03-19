@@ -1,5 +1,5 @@
 {
-  "id": "https://raw.githubusercontent.com/BulbProject/data-standard/master/schema/version-schema.json",
+  "id": "",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "Schema for a Category Version",
   "description": "Each version provides data about an actual version of the category at a particular point in time. Version can be used to notify users about any changes or updates. One category may have many versions.",
@@ -31,6 +31,56 @@
     }
   },
   "definitions": {
-    "Category":{}
+    "Category":{
+      "id": {
+        "title":"Category ID",
+        "description":"ID for this category sepcified as a code of a relevant CPV class common for all the items under this category",
+        "type":"string"
+      },
+      "title": {
+        "title":"Category title",
+        "description":"General title for this category",
+        "type":"string"
+      },
+      "description": {
+        "title":"Category description",
+        "description":"General description for this category",
+        "type":"string"
+      },
+      "classification": {
+        "title":"",
+        "description":"",
+        "type":"object",
+        "$ref":"#/definitions/Classification"
+      },
+      "items":{
+        "title":"Category items",
+        "description":"List of the types of goods available under this category",
+        "type":"array",
+        "items":{
+          "$ref":"#/definitions/Item"
+        }
+      },
+      "criteria":{
+        "title":"Decision making tree",
+        "description":"Criteria describe the sequence of related questions, where answers are needed to reflect the specific needs that the Procuring Entity intends to purchase. Array according to [ocds_requirements_extension](https://github.com/open-contracting-extensions/ocds_requirements_extension)",
+        "type":"array",
+        "items":{
+          "$ref":"#/definitions/Criterion"
+        }
+      },
+      "conversions":{
+        "title":"Conversions",
+        "description":"Conversions needed to run a calculation of available valiants once Procuring Entities' need is captured. Array according to [eOCDS-conversions](https://github.com/eOCDS-Extensions/eOCDS-conversions) ",
+        "type":"array",
+        "items":{
+          "$ref":"#/definitions/Conversion"
+        }
+      }
+    },
+    "Classification":{},
+    "Conversion":{},
+    "Criterion":{},
+    "Item":{}
   }
 }
