@@ -1,5 +1,5 @@
 {
-  "id": "",
+  "id": "https://raw.githubusercontent.com/BulbProject/data-standard/master/schema/version-package-schema.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "Schema for an Open Contracting Release Package",
   "description": "The release package contains a list of releases along with some publishing metadata.  A 'record' of a contracting process follows the same structure as a release, but combines information from multiple points in time into a single summary.",
