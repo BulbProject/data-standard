@@ -559,7 +559,7 @@
         },
         "requirements": {
           "title": "Requirements",
-          "description": "A list of any [Requirement] which must all be satisified for the requirement group to be met.",
+          "description": "A list of any requirement which must all be satisified for the requirement group to be met.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/Requirement"
