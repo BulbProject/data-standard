@@ -540,6 +540,12 @@
           "title": "Option Details",
           "description": "Where options are applied 'Option Details' is used to capture this information",
           "$ref": "#/definitions/OptionDetails"
+        },
+        "unit": {
+          "type": "object",
+          "title": "Unit",
+          "description": "Unit",
+          "$ref":"#/definitions/Unit"
         }
       }
     },
@@ -569,6 +575,78 @@
           "items": {
             "$ref": "#/definitions/Requirement"
           }
+        }
+      }
+    },
+    "Unit": {
+      "title": "Unit",
+      "description": "A description of the unit in which the supplies, services or works are provided (e.g. hours, kilograms) and the unit-price. For comparability, an established list of units can be used.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "description": "Name of the unit",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "value": {
+          "title": "Value",
+          "description": "The monetary [Value] of a single unit.",
+          "$ref": "#/definitions/Value"
+        },
+        "scheme": {
+          "title": "Scheme",
+          "description": "The list from which units of measure identifiers are taken. Use of the scheme 'UNCEFACT' for the UN/CEFACT Recommendation 20 list of 'Codes for Units of Measure Used in International Trade' is recommended.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "id": {
+          "title": "ID",
+          "description": "The identifier from the codelist referenced in the scheme property. For example, with UNCEFACT, this is the value of the 'Common Code' column. From this identifier, applications can look-up the human readable name or symbol for this unit of measure. ",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "uri": {
+          "title": "URI",
+          "description": "If the scheme used provide a machine-readable URI for this unit of measure, this can be given.",
+          "format": "uri",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "Value": {
+      "title": "Value",
+      "type": "object",
+      "description": "Financial value description",
+      "properties": {
+        "amount": {
+          "title": "Amount",
+          "description": "Amount as a number.",
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "currency": {
+          "title": "Currency",
+          "description": "The currency for each amount should always be specified using the uppercase 3-letter currency code from ISO4217.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "valueAddedTaxIncluded": {
+          "title": "A true/false field to indicate whether the value tax was included",
+          "type": "boolean"
         }
       }
     }
