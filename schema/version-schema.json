@@ -24,42 +24,42 @@
     "category": {
       "title": "Category",
       "description": "A specific category of goods presented by its particular version",
-      "$ref":"#/definitions/Category"
+      "$ref": "#/definitions/Category"
     }
   },
   "definitions": {
-    "Category":{
-      "title":"Category",
-      "description":"A specific category of goods presented by its particular version",
-      "type":"object",
+    "Category": {
+      "title": "Category",
+      "description": "A specific category of goods presented by its particular version",
+      "type": "object",
       "properties": {
         "id": {
-          "title":"Category ID",
-          "description":"ID for this category specified as a code of a relevant CPV class common for all the items under this category",
-          "type":"string"
+          "title": "Category ID",
+          "description": "ID for this category specified as a code of a relevant CPV class common for all the items under this category",
+          "type": "string"
         },
         "title": {
-          "title":"Category title",
-          "description":"General title for this category",
-          "type":"string"
+          "title": "Category title",
+          "description": "General title for this category",
+          "type": "string"
         },
         "description": {
-          "title":"Category description",
-          "description":"General description for this category",
-          "type":"string"
+          "title": "Category description",
+          "description": "General description for this category",
+          "type": "string"
         },
         "classification": {
-          "title":"Classification",
-          "description":"Common classification for this category taken from CPV. Structure according to ",
-          "type":"object",
-          "$ref":"#/definitions/Classification"
+          "title": "Classification",
+          "description": "Common classification for this category taken from CPV. Structure according to ",
+          "type": "object",
+          "$ref": "#/definitions/Classification"
         },
-        "items":{
-          "title":"Category items",
-          "description":"List of the types of goods available under this category",
-          "type":"array",
-          "items":{
-            "$ref":"#/definitions/Item"
+        "items": {
+          "title": "Category items",
+          "description": "List of the types of goods available under this category",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Item"
           }
         },
         "documents": {
@@ -78,12 +78,12 @@
             "$ref": "#/definitions/Criterion"
           }
         },
-        "conversions":{
-          "title":"Conversions",
-          "description":"Conversions needed to run a calculation of available valiants once Procuring Entities' need is captured. Array according to [eOCDS-conversions](https://github.com/eOCDS-Extensions/eOCDS-conversions) ",
-          "type":"array",
-          "items":{
-            "$ref":"#/definitions/Conversion"
+        "conversions": {
+          "title": "Conversions",
+          "description": "Conversions needed to run a calculation of available valiants once Procuring Entities' need is captured. Array according to [eOCDS-conversions](https://github.com/eOCDS-Extensions/eOCDS-conversions) ",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Conversion"
           }
         }
       }
@@ -572,7 +572,7 @@
             "null"
           ]
         },
-        "duration":{
+        "duration": {
           "title": "Duration",
           "description": "The duration of the period reflected in ISO format",
           "type": "string",
@@ -586,12 +586,12 @@
       "type": "object",
       "properties": {
         "id": {
-          "title":"ID",
+          "title": "ID",
           "description": "The identifier for this requirement",
           "type": "string"
         },
         "title": {
-          "title":"Title",
+          "title": "Title",
           "description": "Requirement title",
           "type": [
             "string",
@@ -599,7 +599,7 @@
           ]
         },
         "description": {
-          "title":"Description",
+          "title": "Description",
           "description": "Requirement description",
           "type": [
             "string",
@@ -607,7 +607,7 @@
           ]
         },
         "dataType": {
-          "title":"Data type",
+          "title": "Data type",
           "description": "Requirement description",
           "type": [
             "string",
@@ -621,7 +621,7 @@
           ]
         },
         "expectedValue": {
-          "title":"Expected value",
+          "title": "Expected value",
           "description": "Used to state the requirement when the response must be particular value",
           "type": [
             "string",
@@ -631,7 +631,7 @@
           ]
         },
         "minValue": {
-          "title":"Min value",
+          "title": "Min value",
           "description": "Used to state the lower bound of the requirement when the response must be within a certain range",
           "type": [
             "integer",
@@ -640,7 +640,7 @@
           ]
         },
         "maxValue": {
-          "title":"Max value",
+          "title": "Max value",
           "description": "Used to state the upper bound of the requirement when the response must be within a certain range",
           "type": [
             "integer",
@@ -649,11 +649,11 @@
           ]
         },
         "period": {
-          "title":"Period",
+          "title": "Period",
           "description": "Used to specify a particular period the requirement applies to, for example the bidder's turnover in a given year",
           "$ref": "#/definitions/Period"
         },
-        "optionDetails":{
+        "optionDetails": {
           "title": "Option Details",
           "description": "Where options are applied 'Option Details' is used to capture this information",
           "$ref": "#/definitions/OptionDetails"
@@ -662,7 +662,7 @@
           "type": "object",
           "title": "Unit",
           "description": "Unit",
-          "$ref":"#/definitions/Unit"
+          "$ref": "#/definitions/Unit"
         }
       }
     },
