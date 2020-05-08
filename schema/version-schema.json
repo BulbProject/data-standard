@@ -466,7 +466,7 @@
         "description": {
           "title": "Description",
           "description": "Free-text description for this group",
-          "type": ""
+          "type": "string"
         },
         "relatesTo": {
           "title": "Related scheme element",
