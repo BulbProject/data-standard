@@ -62,12 +62,20 @@
             "$ref":"#/definitions/Item"
           }
         },
-        "criteria":{
-          "title":"Decision making tree",
-          "description":"Criteria describe the sequence of related questions, where answers are needed to reflect the specific needs that the Procuring Entity intends to purchase. Array according to [ocds_requirements_extension](https://github.com/open-contracting-extensions/ocds_requirements_extension)",
-          "type":"array",
-          "items":{
-            "$ref":"#/definitions/Criterion"
+        "documents": {
+          "title": "Documents",
+          "description": "A list of documents related to the planning process.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Document"
+          }
+        },
+        "criteria": {
+          "title": "Decision making tree",
+          "description": "Criteria describe the sequence of related questions, where answers are needed to reflect the specific needs that the Procuring Entity intends to purchase. Array according to [ocds_requirements_extension](https://github.com/open-contracting-extensions/ocds_requirements_extension)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Criterion"
           }
         },
         "conversions":{
@@ -310,7 +318,116 @@
         }
       }
     },
-    "OptionDetails":{
+    "Document": {
+      "type": "object",
+      "title": "Document",
+      "description": "Links to, or descriptions of, external documents can be attached at various locations within the standard. Documents can be supporting information, formal notices, downloadable forms, or any other kind of resource that ought to be made public as part of full open contracting.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "A local, unique identifier for this document. This field is used to keep track of multiple revisions of a document through the compilation from release to record mechanism.",
+          "type": [
+            "string",
+            "integer"
+          ],
+          "minLength": 1
+        },
+        "documentType": {
+          "title": "Document type",
+          "description": "A classification of the document described, using the open [documentType](https://standard.open-contracting.org/{{version}}/{{lang}}/schema/codelists/#document-type) codelist.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "codelist": "documentType.csv",
+          "openCodelist": true
+        },
+        "title": {
+          "title": "Title",
+          "description": "The document title.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "title": "Description",
+          "description": "A short description of the document. Descriptions are recommended to not exceed 250 words. In the event the document is not accessible online, the description field can be used to describe arrangements for obtaining a copy of the document.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "relatesTo": {
+          "title": "Related schema element",
+          "description": "The schema element that the document judges, evaluates or assesses.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "item",
+            null
+          ]
+        },
+        "relatedItem": {
+          "title": "Related item",
+          "description": "Where relatesTo = \"item\" this field must be populated with the id of the item in this tender section which the criterion relates to. Where relatesTo <> \"item\" this field should be omitted.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "url": {
+          "title": "URL",
+          "description": "A direct link to the document or attachment. The server providing access to this document ought to be configured to correctly report the document mime type.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "datePublished": {
+          "title": "Date published",
+          "description": "The date on which the document was first published. This is particularly important for legally important documents such as notices of a tender.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "dateModified": {
+          "title": "Date modified",
+          "description": "Date that the document was last modified",
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "format": {
+          "title": "Format",
+          "description": "The format of the document, using the open [IANA Media Types](http://www.iana.org/assignments/media-types/) codelist (see the values in the 'Template' column), or using the 'offline/print' code if the described document is published offline. For example, web pages have a format of 'text/html'.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "language": {
+          "title": "Language",
+          "description": "The language of the linked document using either two-letter [ISO639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes), or extended [BCP47 language tags](http://www.w3.org/International/articles/language-tags/). The use of lowercase two-letter codes from [ISO639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) is recommended unless there is a clear user need for distinguishing the language subtype.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "OptionDetails": {
       "title": "Option Details",
       "description": "Where options are applied 'Option Details' is used to capture this information",
       "type": "object",
