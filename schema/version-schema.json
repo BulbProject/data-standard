@@ -7,6 +7,7 @@
   "required": [
     "id",
     "date",
+    "status",
     "category"
   ],
   "properties": {
@@ -20,6 +21,14 @@
       "description": "The date this version was released, or published.",
       "type": "string",
       "format": "date-time"
+    },
+    "status": {
+      "title": "Category status",
+      "enum": [
+        "active",
+        "pending"
+      ],
+      "type": "string"
     },
     "category": {
       "title": "Category",
